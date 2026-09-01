@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mia Lai— Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EFF1EC;
+    --ink: #1F2421;
+    --muted: #6B6F65;
+    --accent: #2E4B7A;
+    --accent-warm: #B67B2E;
+    --line: #D3D6CD;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 80px 24px 100px; }
+
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 3.2rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 10px;
+    opacity: 0;
+    animation: rise 0.6s ease-out forwards;
+  }
+  header p.tagline {
+    font-size: 1.05rem;
+    max-width: 42ch;
+    color: var(--muted);
+    margin: 0 0 22px;
+    opacity: 0;
+    animation: rise 0.6s ease-out 0.1s forwards;
+  }
+  header nav { opacity: 0; animation: rise 0.6s ease-out 0.2s forwards; }
+  header nav a {
+    color: var(--ink);
+    text-decoration: none;
+    margin-right: 20px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  header nav a:hover { color: var(--accent); border-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  section.projects { margin-top: 60px; }
+  section.projects h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .project { padding: 28px 0; border-top: 1px solid var(--line); }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project h3 { margin: 0 0 4px; font-size: 1.15rem; font-weight: 600; }
+  .project .stack { color: var(--muted); font-size: 0.92rem; margin: 0 0 10px; }
+  .project ul { margin: 0; padding-left: 18px; }
+  .project li { margin-bottom: 4px; }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 48px 18px 80px; }
+    header h1 { font-size: 2.4rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    header h1, header p.tagline, header nav { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Mia</h1>
+    <p class="tagline">Computer science student and data operations intern, building systems</p>
+    <nav>
+      <a href="https://github.com/yourusername">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      <a href="mailto:you@email.com">Email</a>
+    </nav>
+  </header>
+
+  <section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>GellyNails — Booking Platform</h3>
+      <p class="stack">Next.js · Supabase · Google Calendar API · Vercel</p>
+      <ul>
+        <li>Built a booking system with client-tier matching via a security-definer Postgres function</li>
+        <li>Integrated Google Calendar through service-account auth and admin OAuth login</li>
+        <li>Handled booking race conditions with a "held" status pattern</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>ETL Anomaly Detection Pipeline — Chartway FCU</h3>
+      <p class="stack">T-SQL (SSMS) · Power BI · DAX</p>
+      <ul>
+        <li>Built a modular pipeline using Median Absolute Deviation to flag spikes and drops across auto-discovered tables</li>
+        <li>Surfaced results in a Power BI dashboard with conditional alert cards and automated email notifications</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>CodeComp — Plagiarism Detection CLI</h3>
+      <p class="stack">Java · Gradle · JUnit 5 · GitHub Actions</p>
+      <ul>
+        <li>8-person Agile team; built the Warning Report module and led CI/CD setup</li>
+        <li>Facilitated sprint planning and owned project infrastructure</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>ACMclassifier — ML Document Classifier</h3>
+      <p class="stack">Java · JUnit 5</p>
+      <ul>
+        <li>6-person team; built the PDF file handler and validation layer</li>
+        <li>Added system-test infrastructure for training and classifying subprojects</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>BadmintonIQ</h3>
+      <p class="stack">757 Build Weekend · 1st place</p>
+      <ul>
+        <li>Built a winning prototype in a 48-hour hackathon format</li>
+      </ul>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>
